@@ -1,0 +1,153 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import instagram from "../assets/images/ig.svg";
+import facebook from "../assets/images/fb.svg";
+import HoverGallery from "../components/HoverGallery.astro";
+---
+
+<MainLayout title="Galleri">
+  <div class="flex items-center mb-10 mt-10 lg:mt-20 mx-10 lg:mx-20 lg:mb-24">
+    <div class="flex-grow border-t border-brun-900"></div>
+    <span
+      class="px-4 text-4xl text-brun-900 font-bold text-center uppercase lg:text-6xl"
+      ><h1>Galleri</h1></span
+    >
+    <div class="flex-grow border-t border-brun-900"></div>
+  </div>
+  <section class="flex items-start gap-6 flex-wrap mx-10 mb-10 lg:mx-20">
+    <div class="flex items-center gap-4 min-w-[3rem]">
+      <a
+        href="https://www.instagram.com/casa_no_17/"
+        target="_blank"
+        class="transition-transform duration-200 active:scale-105 hover:scale-105"
+      >
+        <Image
+          src={instagram}
+          alt="Beige Instagram ikon der fører videre til Instagram"
+          loading="lazy"
+          class="w-12 h-12"
+        />
+      </a>
+
+      <a
+        href="https://www.facebook.com/groups/164095825399/"
+        target="_blank"
+        class="transition-transform duration-200 active:scale-105 hover:scale-105"
+      >
+        <Image
+          src={facebook}
+          alt="Beige Facebook ikon som sender videre til Facebook"
+          loading="lazy"
+          class="w-12 h-12"
+        />
+      </a>
+    </div>
+
+    <div>
+      <p class="max-w-prose leading-relaxed">
+        Få et glimt af hverdagen i salonen, bliv inspireret af smukke hårstile
+        og vær den første til at få nyheder, tips og eksklusive tilbud.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="grid grid-cols-2 mx-10 mb-20 gap-6 lg:gap-14 lg:grid-cols-3 lg:mx-20"
+  >
+    <HoverGallery
+      image="../img/billede_1.webp"
+      imagealt="Billedet illustrerer en mand med kort brunt hår og mørk t-shirt."
+      beskrivelse="Herreklip"
+      loading="eager"
+    />
+    <HoverGallery
+      image="../img/billede_2.webp"
+      imagealt="Billedet viser kvinde med håret flettet og pynt i. Hun har en hvid kjole på."
+      beskrivelse="Håropsætning til bryllup"
+    />
+    <HoverGallery
+      image="../img/billede_3.webp"
+      imagealt="Billedet viser en kvinde med lyserødt hår og en hvid t-shirt på."
+      beskrivelse="Helfarve"
+    />
+    <HoverGallery
+      image="../img/billede_4.webp"
+      imagealt="Billedet viser en kvinde med blond bølget hår. Hun har hvid kjole på."
+      beskrivelse="Helfarve & dameklip"
+    />
+    <HoverGallery
+      image="../img/billede_5.webp"
+      imagealt="Billedet illustrer en mand med mørkt hår og en hvid t-shirt på."
+      beskrivelse="Herreklip"
+    />
+    <HoverGallery
+      image="../img/billede_6.webp"
+      imagealt="Billedet viser kvinde med rødligt hår og en stribet blå bluse på."
+      beskrivelse="Dameklip"
+    />
+    <HoverGallery
+      image="../img/billede_7.webp"
+      imagealt="Billedet viser kvinde med lyst hår og en grå bluse på."
+      beskrivelse="Helfarve & dameklip"
+    />
+    <HoverGallery
+      image="../img/billede_8.webp"
+      imagealt="Billedet illustrerer kvinde med langt krøllet hår og en hvid bluse på."
+      beskrivelse="Dameklip & styling"
+    />
+    <HoverGallery
+      image="../img/billede_9.webp"
+      imagealt="Billedet viser kvinde med langt mellemblondt hår og en mørk bluse på."
+      beskrivelse="Dameklip & hårkur"
+    />
+    <HoverGallery
+      image="../img/billede_10.webp"
+      imagealt="Billedet illustrerer kvinde med mørkt bølget hår og en mørk bluse med motiv på."
+      beskrivelse="Dameklip"
+    />
+    <HoverGallery
+      image="../img/billede_11.webp"
+      imagealt="Billedet viser kvinde med langt blond hår og en grå bluse på."
+      beskrivelse="Striber i hele håret"
+    />
+    <HoverGallery
+      image="../img/billede_12.webp"
+      imagealt="Billedet illustrerer kvinde med farvet hår i forskellie farver og en hvid top på."
+      beskrivelse="Helfarve"
+    />
+    <HoverGallery
+      image="../img/billede_13.webp"
+      imagealt="Billedet viser en mand med mørkt hår og en grå t-shirt på."
+      beskrivelse="Herreklip"
+    />
+    <HoverGallery
+      image="../img/billede_14.webp"
+      imagealt="Billedet illustrerer en kvinde med langt blond hår og en mørk bluse på."
+      beskrivelse="Helfarve & dameklip"
+    />
+    <HoverGallery
+      image="../img/billede_15.webp"
+      imagealt="Billedet viser kvinde med rødt hår og en mørk t-shirt på."
+      beskrivelse="Håropsætning"
+    />
+    <div class="lg:hidden">
+      <HoverGallery
+        image="../img/billede_16.webp"
+        imagealt="Billedet viser mand med mørkt hår og en blå skjorte på."
+        beskrivelse="Herreklip"
+      />
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  h1 {
+    font-family: outfit;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: agrandir;
+  }
+</style>

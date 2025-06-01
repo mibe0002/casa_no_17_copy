@@ -1,0 +1,92 @@
+---
+import Link from './Link.astro';
+import { Image } from 'astro:assets';
+import logo_light from '../assets/images/logo_light.svg';
+import instagram from '../assets/images/instagram.svg';
+import facebook from '../assets/images/facebook.svg';
+---
+<!-- Google maps embed code -->
+<div class="w-full">
+    <iframe
+        title="Google Maps placering af Frisør Casa No. 17"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4498.249644016717!2d12.556216776403023!3d55.68681759707215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46525307704b2903%3A0x163b088ee6871324!2sCasa%20No.%2017!5e0!3m2!1sen!2sdk!4v1746611081789!5m2!1sen!2sdk"
+        class="w-full h-[224px] lg:h-[250px] border-0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+<!-- resten af footeren -->
+<div class="px-10 lg:px-20 py-8 lg:py-10 grid grid-cols-[160px_auto] grid-rows-2 lg:grid-cols-4 lg:grid-rows-1">
+    <div class="lg:order-2 lg:justify-self-center">
+        <p id="outfit" class="text-brun-25 text-base lg:text-3xl font-bold uppercase pb-6">CASA NO. 17</p>
+        <nav>
+            <ul id="agrandir" class="flex flex-col gap-2">
+                <li><Link href="/priser" variant="menu-footer", size="footer" class="link-underline-hover link-underline-25 link-underline-bottom-0" style={{ fontFamily: 'agrandir, sans-serif' }}>Priser</Link></li>
+                <li><Link href="/galleri" variant="menu-footer", size="footer" class="link-underline-hover link-underline-25 link-underline-bottom-0" style={{ fontFamily: 'agrandir, sans-serif' }}>Galleri</Link></li>
+                <li><Link href="/om-os" variant="menu-footer", size="footer" class="link-underline-hover link-underline-25 link-underline-bottom-0" style={{ fontFamily: 'agrandir, sans-serif' }}>Om os</Link></li>
+                <li><Link href="/om-os" variant="menu-footer", size="footer" class="link-underline-hover link-underline-25 link-underline-bottom-0" style={{ fontFamily: 'agrandir, sans-serif' }}>Kontakt</Link></li>
+                <li><Link href="https://salonbook.one/?casa17#/" target="_blank" variant="footer", size="footer">Book tid</Link></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="lg:order-4 lg:justify-self-center">
+        <p id="outfit" class="text-brun-25 text-base lg:text-3xl font-bold uppercase pb-6">Kontakt</p>
+        <address class="text-brun-25 not-italic text-sm lg:text-base flex flex-col gap-3.5">
+            <Link href="https://maps.app.goo.gl/ycvebqFF2aEwhLdu6" size="footer" variant="footer"
+            target="_blank"
+            rel="noopener noreferrer">
+                <span id="agrandir">Blågårdsgade 17</span><br>
+                <span id="agrandir">2200 København N</span>
+            </Link>
+            <Link href="tel:+4535350080" size="footer" variant="footer" style={{ fontFamily: 'agrandir, sans-serif' }}>Tlf. 3535 0080</Link>
+            <Link href="mailto:Vedstedcamilla@gmail.com" size="footer" variant="footer" style={{ fontFamily: 'agrandir, sans-serif' }}>Vedstedcamilla@gmail.com</Link>
+        </address>
+        <div class="flex gap-8 pt-5">
+            <Link href="https://www.instagram.com/casa_no_17/" target="_blank" class="transition-transform duration-200 active:scale-105 hover:scale-105">
+                <Image src={instagram} alt="Lys Instagram ikon der fører videre til Instagram" loading="lazy"></Image>
+            </Link>
+
+            <Link href="https://www.facebook.com/groups/164095825399/" target="_blank" class="transition-transform duration-200 active:scale-105 hover:scale-105">
+                <Image src={facebook} alt="Lys Facebook ikon som sender videre til Facebook" loading="lazy"></Image>
+            </Link>
+        </div>
+    </div>
+    <div class="lg:order-3 lg:justify-self-center">
+        <p id="outfit" class="text-brun-25 text-base lg:text-3xl font-bold uppercase pb-6">Åbningstider</p>
+        <ul class="flex flex-col gap-2">
+            <li class="items-center gap-1 text-brun-25 text-sm lg:text-base">Mandag: lukket</li>
+            <li class="items-center gap-1 text-brun-25 text-sm lg:text-base">Tirsdag: 10.00 - 18.00</li>
+            <li class="items-center gap-1 text-brun-25 text-sm lg:text-base">Onsdag: 10.00 - 18.00</li>
+            <li class="items-center gap-1 text-brun-25 text-sm lg:text-base">Torsdag: 10.00 - 19.00</li>
+            <li class="items-center gap-1 text-brun-25 text-sm lg:text-base">Fredag: 10.00 - 18.00</li>
+            <li class="items-center gap-1 text-brun-25 text-sm lg:text-base">Lørdag: 9.00 - 13.00</li>
+            <li class="items-center gap-1 text-brun-25 text-sm lg:text-base">Søndag: lukket</li>
+        </ul>
+    </div>
+    <div class="flex flex-col justify-end lg:justify-start gap-8 lg:order-1 lg:justify-self-center">
+        <Link href="/" class="transition-transform duration-200 active:scale-105 hover:scale-105">
+            <div class="max-w-[135px] lg:max-w-[200px]">
+                <Image src={logo_light} alt="" loading="lazy"
+                width={300} 
+                height={100} 
+                style="width: 100%; height: auto;" ></Image>
+                <span class="sr-only">Gå til Casa No 17s forside</span>
+            </div>
+        </Link>
+        <p class="text-brun-25 text-sm lg:text-base">© 2025 Frisør Casa No. 17.<br>Alle rettigheder forbeholdes.</p>
+    </div>
+</div>
+
+<style>
+    p, #agrandir, ul {
+        font-family: agrandir;
+    }
+
+    #outfit {
+        font-family: outfit;
+        font-weight: 700;
+    }
+</style>
+

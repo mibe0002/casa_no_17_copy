@@ -1,0 +1,359 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link2.astro";
+import Aabningstider from "../components/Aabningstider.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import HoverPic from "../components/HoverPic.astro";
+import GoogleCard from "../components/GoogleCard.astro";
+import { Image } from "astro:assets";
+import LogoLight from "../assets/images/index_logo_light.svg";
+import Salon from "../assets/images/index_salon.webp";
+import Saks from "../assets/images/index_saks.gif";
+import Wella from "../assets/images/wella.svg";
+import Icon from "../assets/images/icon.svg";
+import Evo from "../assets/images/evo.svg";
+---
+
+<MainLayout title="Casa No. 17">
+  <section id="hero" class="relative w-full h-screen overflow-hidden">
+    <!-- Video Background -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover"
+      title="Video med forskellige klip fra frisørsalonen"
+    >
+      <source src="/video/hero_video.webm" type="video/webm" />
+    </video>
+    <!-- Overlay for contrast -->
+    <div class="absolute inset-0 bg-brun-800/40 z-10"></div>
+    <!-- Content -->
+    <div
+      class="relative z-20 flex items-center justify-center h-full text-center px-4 md:pt-24"
+    >
+      <div class="text-white max-w-2xl">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-4 uppercase">
+          Din Salon på Nørrebro
+        </h1>
+        <p class="text-2xl md:text-3xl mb-6 leading-relaxed">
+          Hos os er du garanteret høj kvalitet og kreativ inspiration til dit
+          næste look.
+        </p>
+        <div class="flex flex-col items-center gap-4 pt-30">
+          <Link
+            class="uppercase"
+            variant="db"
+            href="https://salonbook.one/?casa17#/"
+            target="_blank">BOOK TID</Link
+          >
+          <p class="text-sm">
+            Eller ring på <a
+              href="tel:+4535350080"
+              class="text-brun-25 no-underline inline-block py-[5px] px-[5px] relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:bg-brun-25 after:transition-[width,left] after:duration-300 hover:after:w-full hover:after:left-0"
+              >+45 35 35 00 80</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="banner" class="logo-banner">
+    <div class="logo-track gap-[80px] md:gap-[100px] lg:gap-[300px]">
+      <a href="https://www.wella.com/professional/da-DK/home"
+        ><Image
+          class="lg:hover:scale-110 duration-300"
+          src={Wella}
+          alt="Ikon af firmaet Wella, klik på billedet for at komme til hjemmesiden"
+          loading="lazy"
+        /></a
+      >
+      <a href="https://iconproducts.dk/"
+        ><Image
+          class="lg:hover:scale-110 duration-300"
+          src={Icon}
+          alt="Ikon af firmaet ICON, klik på billedet for at komme til hjemmesiden"
+          loading="lazy"
+        /></a
+      >
+      <a href="https://evohairstore.com/"
+        ><Image
+          class="lg:hover:scale-110 duration-300"
+          src={Evo}
+          alt="Ikon af firmaet Evo, klik på billedet for at komme til hjemmesiden"
+          loading="lazy"
+        /></a
+      >
+      <!-- Duplicate for seamless scrolling on mobile -->
+      <Image
+        class="md:hidden"
+        src={Wella}
+        alt="Ikon af firmaet Wella, klik på billedet for at komme til hjemmesiden"
+        loading="lazy"
+      />
+      <Image
+        class="md:hidden"
+        src={Icon}
+        alt="Ikon af firmaet ICON, klik på billedet for at komme til hjemmesiden"
+        loading="lazy"
+      />
+      <Image
+        class="md:hidden"
+        src={Evo}
+        alt="Ikon af firmaet Evo, klik på billedet for at komme til hjemmesiden"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <section
+    id="om-os_section"
+    class="flex flex-col md:flex-row min-h-screen lg:h-screen"
+  >
+    <!-- Left/Text Side -->
+    <div
+      class="bg-brun-800 text-brun-25 w-full md:w-3/5 p-10 flex flex-col justify-center items-center"
+    >
+      <div class="mb-6 lg:mb-18 flex items-center scale-50 lg:scale-75">
+        <Image class="" src={LogoLight} alt="Casa No 17 logo" loading="lazy" />
+      </div>
+
+      <div class="max-w-5xl">
+        <h2
+          class="text-brun-25 text-4xl lg:text-6xl font-bold mb-6 leading-tight text-center md:text-left lg:px-20"
+        >
+          SALON PÅ<br class="block md:hidden" /> NØRREBRO
+        </h2>
+
+        <p class="text-base leading-relaxed lg:px-20 mb-8 lg:mb-24">
+          Casa 17 blev etableret ud fra et ønske om at skabe et hyggeligt og
+          rart sted, hvor alle er velkomne. Vi gør vores bedste for at skabe en
+          indbydende stemning, hvor man kan føle sig godt tilpas. Vi tager altid
+          udgangspunkt i kunden og sætter en ære i at finde lige netop den
+          frisure og/eller hårfarve, der klæder den enkelte kunde.
+        </p>
+      </div>
+
+      <div class="flex justify-center">
+        <Link class="uppercase" variant="db" href="/om-os">Læs mere om os</Link>
+      </div>
+    </div>
+
+    <!-- Right/Image Side -->
+    <div class="w-full md:w-2/5 h-[280px] md:h-auto order-[-1] lg:order-1">
+      <Image
+        class="w-full h-full object-cover"
+        src={Salon}
+        alt="Salon interior"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <article id="åbningstider" class="flex justify-center">
+    <Aabningstider class="flex items-center" />
+  </article>
+
+  <section id="alt andet" class="background">
+    <div id="services" class="flex justify-center">
+      <div class="mx-10 lg:mx-20 xl:max-w-[1536px] pb-12 md:py-12">
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-14">
+          <ServiceCard
+            url="https://salonbook.one/?casa17#/"
+            target="_blank"
+            cardimage="../images/link1.webp"
+            cardimagealt="Klik for at bestille tid online"
+            titel="Book tid"
+          />
+          <ServiceCard
+            url="/priser"
+            cardimage="../images/link2.webp"
+            cardimagealt="Klik for at se salonens priser på ydelser"
+            titel="Se vores priser"
+          />
+          <ServiceCard
+            url="/om-os"
+            cardimage="../images/link3.webp"
+            cardimagealt="Klik for at læse mere om hvem vi er, samt andet information"
+            titel="Læs mere om os"
+          />
+        </div>
+      </div>
+    </div>
+
+    <section id="saksen" class="bg-brun-800">
+      <div class="flex items-center px-10 lg:px-20">
+        <div class="flex-grow border-t border-brun-25"></div>
+        <span class="px-4 max-w-[110px] items-center">
+          <Image src={Saks} alt="Saks der bevæger sig" loading="lazy" />
+        </span>
+        <div class="flex-grow border-t border-brun-25"></div>
+      </div>
+    </section>
+
+    <section id="galleri" class="bg-brun-800">
+      <div class="md:flex justify-center">
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 mx-10 md:mx-20 gap-6 md:gap-14 py-12 max-w-[1536px]"
+        >
+          <HoverPic
+            image="../img/billede_1.webp"
+            imagealt="Billedet illustrerer en mand med kort brunt hår og mørk t-shirt."
+            beskrivelse="Herreklip"
+          />
+          <HoverPic
+            image="../img/billede_2.webp"
+            imagealt="Billedet viser kvinde med håret flettet og pynt i. Hun har en hvid kjole på."
+            beskrivelse="Håropsætning til bryllup"
+          />
+          <HoverPic
+            image="../img/billede_3.webp"
+            imagealt="Billedet viser en kvinde med lyserødt hår og en hvid t-shirt på."
+            beskrivelse="Helfarve"
+          />
+          <div class="md:hidden">
+            <HoverPic
+              image="../img/billede_4.webp"
+              imagealt="Billedet viser en kvinde med blond bølget hår. Hun har hvid kjole på."
+              beskrivelse="Helfarve & dameklip"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center pb-12">
+        <Link class="uppercase" variant="db" href="/galleri">Se galleri</Link>
+      </div>
+    </section>
+  </section>
+
+  <section id="reviews">
+    <div>
+      <h5
+        class="uppercase font-bold text-4xl lg:text-6xl text-center px-14 md:px-0 pt-12 lg:pt-16"
+      >
+        Hvad vores <wbr />kunder siger
+      </h5>
+    </div>
+    <div
+      class="grid md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr_1fr] gap-6 GoogleCards pt-12 pb-4 lg:pt-16 lg:pb-20 lg:px-20"
+    >
+      <GoogleCard
+        url="https://g.co/kgs/LPzRZBj"
+        cardimagealt="Et review fra Thomas Jeppson omkring Casa No 17"
+        navn="Thomas Jeppson"
+        dato="For 10 dage siden"
+        review="Den bedste frisør på Nørrebro! Hyggelig og god! Kan sit kram! Og Camilla er sød og rar!"
+      />
+      <GoogleCard
+        url="https://g.co/kgs/XE5i6iB"
+        cardimagealt="Et review fra N. Kragh omkring Casa No 17"
+        navn="N. Kragh"
+        dato="For 2 måneder siden"
+        review="Altid super godt arbejde og dejlig behandling 👍"
+      />
+      <GoogleCard
+        url="https://g.co/kgs/vXmPrGS"
+        cardimagealt="Et review fra Mette Risbo Jessen omkring Casa No 17"
+        navn="Mette Risbo Jessen"
+        dato="For 8 måneder siden"
+        review="Altid god service"
+      />
+      <GoogleCard
+        url="https://g.co/kgs/pB3PqvP"
+        cardimagealt="Et review fra Benjamin Rud Elberth omkring Casa No 17"
+        navn="Benjamin Rud Elberth"
+        dato="For 1 år siden"
+        review="Camilla er jo bare fantastisk. Det koster noget. Men du får hvad du betaler for. En dejlig oplevelse."
+      />
+    </div>
+  </section>
+
+  <section class="pt-16 md:pt-0"></section>
+</MainLayout>
+
+<style>
+  h1,
+  h2,
+  h5 {
+    font-family: outfit;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: agrandir;
+  }
+  .background {
+    background: linear-gradient(0deg, #443028 80%, #faf9f8 20%);
+  }
+
+  .logo-banner {
+    height: 200px;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-track img {
+    height: 100px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  @media only screen and (max-width: 768px) {
+    .logo-banner {
+      justify-content: flex-start;
+    }
+
+    .logo-track {
+      animation: scrollLeft 10s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .GoogleCards {
+      display: flex;
+      overflow-x: auto; /* Only horizontal scrolling */
+      scroll-snap-type: x mandatory;
+      padding-left: 36px;
+      padding-right: 36px;
+      gap: 20px;
+      scroll-padding: 10px;
+    }
+
+    /* Custom Scrollbar */
+    .GoogleCards::-webkit-scrollbar {
+      width: auto;
+      height: 10px;
+    }
+    .GoogleCards::-webkit-scrollbar-track {
+      background: #ece3df;
+    }
+    .GoogleCards::-webkit-scrollbar-thumb {
+      background-color: #443028; /* Scrollbar thumb color */
+      border-radius: 2px;
+    }
+    .GoogleCards::-webkit-scrollbar-thumb:hover {
+      background-color: #443028; /* Thumb color on hover */
+    }
+    .background {
+      background: linear-gradient(0deg, #443028 95%, #faf9f8 5%);
+    }
+  }
+</style>

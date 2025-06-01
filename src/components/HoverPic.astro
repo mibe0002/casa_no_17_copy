@@ -1,0 +1,70 @@
+---
+const {
+  image = "",
+  imagealt = "",
+  titel = "",
+  navn = "",
+  beskrivelse = "",
+} = Astro.props;
+---
+
+<div class="shadow-lg shadow-brun-900/50 rounded-[5px]">
+  <!-- Sørger for at man kan klikke på card for info på mobil -->
+  <!-- open: false betyder, at info-boksen er skjult i starten.
+  @click.away="open = false" gør, at info-boksen lukker, hvis man klikker udenfor. -->
+  <div x-data="{ open: false }" @click.away="open = false" class="relative">
+    <div class="relative group">
+      <div class="w-full h-auto">
+        <img
+          src={image}
+          alt={imagealt}
+          class="w-full h-full object-cover cursor-pointer rounded-[5px]"
+          loading="lazy"
+          @click="window.innerWidth < 768 ? open = !open : null"
+        />
+      </div>
+      <div
+        x-show="open || window.innerWidth >= 768"
+        x-transition
+        class="rounded-b-[5px] absolute bottom-0 left-0 w-full bg-brun-700/80 text-brun-25 p-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 md:pointer-events-none"
+      >
+        <p id="outfit">{titel}</p>
+        <p>{navn}</p>
+        <p>{beskrivelse}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  p {
+    font-family: agrandir;
+  }
+
+  #outfit {
+    font-family: outfit;
+    font-weight: 700;
+  }
+  
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@media (min-width: 1024px) {
+  .desktop-no-float {
+    animation: none !important;
+  }
+}
+</style>
+
+<!-- Henter Alpine.js, som gør det muligt at bruge x-data, x-show, @click, osv. -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>

@@ -1,0 +1,32 @@
+---
+// Henter parametrene fra Astro.props
+const { href="", target="_self", variant="small", size="header", ...rest} = Astro.props;
+
+//Alle Links
+const linkStyling = "transition-colors duration-500 no-underline font-outfit text-brun-25"; 
+
+//Forskellige knapper (farver o.lign.)
+const variantClasses = {
+"footer": "link-underline-hover link-underline-25 link-underline-bottom-0 font-agrandir focus:outline-none focus:ring-2 focus:ring-brun-25",
+"small": "font-bold uppercase",
+"large": "font-bold uppercase text-brun-900 no-underline inline-block py-[10px] px-[20px] link-underline-hover link-underline-800 link-underline-bottom-0 focus:outline-none focus:ring-2 focus:ring-brun-25",
+};
+
+//Forskellige størrelser
+const sizeClasses = {
+"footer": "text-sm lg:text-base",
+"header": "text-2xl lg:text-base",
+};
+---
+
+<!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
+<a href={href} target={target} class:list={[linkStyling, variantClasses[variant],
+sizeClasses[size], rest.class]} {...rest}>
+    <slot />
+</a>
+
+<style>
+    a {
+        font-family: outfit;
+    }
+</style>

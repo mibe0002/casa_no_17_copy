@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "agrandir";
+  src: url("/font/agrandir.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "outfit";
+  src: url("/font/outfit.woff2") format("woff2");
+  /* font-weight: 700; */
+  font-style: normal;
+}
+
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+@plugin '@tailwindcss/forms';
+
+@theme {
+  /* Her tilføjes theme variable // tokens */
+
+  /* Colors */
+  --color-brun-0: #ffffff;
+  --color-brun-25: #faf9f8;
+  --color-brun-50: #f6f1ef;
+  --color-brun-100: #ece3df;
+  --color-brun-200: #dbc9c2;
+  --color-brun-300: #c8ada2;
+  --color-brun-400: #b79485;
+  --color-brun-500: #a57865;
+  --color-brun-600: #87604f;
+  --color-brun-700: #64473a;
+  --color-brun-800: #443028;
+  --color-brun-900: #201713;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brun-25);
+  }
+
+  footer {
+    background-color: var(--color-brun-800);
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+  /* underline hover effect */
+  .link-underline-hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background-color: var(--link-underline-color, #443028); /* fallback color brun-800 */
+    transition-property: width, left;
+    transition-duration: 300ms;
+  }
+
+  .link-underline-hover {
+    @apply relative;
+  }
+
+  .link-underline-hover:hover::after {
+    left: 0;
+    width: 100%;
+  }
+
+  .link-underline-25 {
+    --link-underline-color: #faf9f8; /* brun-25 */
+  }
+
+  .link-underline-bottom-0::after {
+    bottom: 0;
+  }
+
+  .link-underline-bottom-2::after {
+    bottom: -0.5rem; /* bottom-2 */
+  }
+
+  /* active for hash */
+  .link-underline-active::after {
+    left: 0;
+    width: 100%;
+  }
+  .link-underline-active {
+    position: relative;
+  }
+}
+/* Animation fra: https://codepen.io/jstn/pen/mdoOZJ af Justin @jstn */
+/*css use in html = link-underline-hover link-underline-800/25 link-underline-bottom-0/2 */

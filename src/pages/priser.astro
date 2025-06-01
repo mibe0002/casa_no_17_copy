@@ -1,0 +1,223 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Pris from "../components/Pris.astro";
+import HoverPic from "../components/HoverPic.astro";
+import { Image } from "astro:assets";
+import hairdryer from "../assets/images/hairdryer.svg";
+import Link2 from "../components/Link2.astro";
+---
+
+<MainLayout title="Priser">
+  <section class="mx-10 lg:mx-20">
+    <div class="flex items-center mt-10 lg:mt-20 mb-6 lg:mb-24">
+      <!-- Border Grafik -->
+      <div class="flex-grow border-t border-brun-900 min-w-6"></div>
+      <h1 class="text-4xl lg:text-6xl uppercase font-bold px-[16px]">Priser</h1>
+      <!-- Border Grafik -->
+      <div class="flex-grow border-t border-brun-900 min-w-6"></div>
+    </div>
+
+    <!-- Priserne -->
+    <div class="lg:grid lg:grid-cols-2 lg:gap-36">
+      <div class="lg:flex lg:flex-col lg:gap-20 lg:items-stretch">
+        <!-- Klip -->
+        <div class="mb-16 lg:mb-0">
+          <h2 class="text-2xl uppercase font-bold pb-6">Klip</h2>
+          <Pris service="Dameklip m. vask/føn" pris="730 kr." />
+          <Pris service="Herreklip m. vask/føn" pris="630 kr." />
+          <Pris service="Juniorklip 6-12 år" pris="490 kr." />
+          <Pris service="Børneklip 0-5 år" pris="390 kr." />
+        </div>
+
+        <!-- Striber -->
+        <div class="mb-16 lg:mb-0">
+          <h2 class="text-2xl uppercase font-bold pb-6">Striber</h2>
+          <Pris service="Striber i top/reperation" pris="Fra 800 kr." />
+          <Pris service="Striber i hele håret" pris="Fra 1.400 kr." />
+        </div>
+
+        <!-- Striber med klip -->
+        <div class="mb-16 lg:mb-0">
+          <h2 class="text-2xl uppercase font-bold pb-6">STRIBER MED KLIP</h2>
+          <Pris
+            service="Striber i top/reparation inkl. klip"
+            pris="Fra 1.530 kr."
+          />
+          <Pris service="Striber hele håret inkl. klip" pris="Fra 2.130 kr." />
+        </div>
+
+        <!-- mobil rækkefølge -->
+        <!-- Helfarve mobil -->
+        <div class="mb-16 lg:mb-0 lg:hidden">
+          <h2 class="text-2xl uppercase font-bold pb-6">HELFARVE</h2>
+          <Pris service="Helfarve i bund" pris="Fra 750 kr." />
+          <Pris service="Helfarve ud i længder" pris="Fra 900 kr" />
+        </div>
+
+        <!-- Helfarve med klip mobil -->
+        <div class="mb-16 lg:mb-0 lg:hidden">
+          <h2 class="text-2xl uppercase font-bold pb-6">HELFARVE MED KLIP</h2>
+          <Pris service="Helfarve i bund inkl. klip" pris="Fra 1.480 kr." />
+          <Pris
+            service="Helfarve ud i længder inkl. klip"
+            pris="Fra 1.630 kr."
+          />
+        </div>
+
+        <!-- Bryn & vipper -->
+        <div class="mb-16 lg:mb-0">
+          <h2 class="text-2xl uppercase font-bold pb-6">BRYN & VIPPER</h2>
+          <Pris service="Bryn og vipper" pris="320 kr." />
+          <Pris service="Bryn m. farve" pris="130 kr." />
+          <Pris service="Vipper" pris="190 kr." />
+        </div>
+      </div>
+
+      <!-- Helfarve desktop -->
+      <div class="lg:flex lg:flex-col lg:gap-20 lg:items-stretch">
+        <div class="mb-16 lg:mb-0 hidden lg:block">
+          <h2 class="text-2xl uppercase font-bold pb-6">HELFARVE</h2>
+          <Pris service="Helfarve i bund" pris="Fra 750 kr." />
+          <Pris service="Helfarve ud i længder" pris="Fra 900 kr" />
+        </div>
+
+        <!-- Helfarve med klip desktop -->
+        <div class="mb-16 lg:mb-0 hidden lg:block">
+          <h2 class="text-2xl uppercase font-bold pb-6">HELFARVE MED KLIP</h2>
+          <Pris service="Helfarve i bund inkl. klip" pris="Fra 1.480 kr." />
+          <Pris
+            service="Helfarve ud i længder inkl. klip"
+            pris="Fra 1.630 kr."
+          />
+        </div>
+
+        <!-- Hårkur -->
+        <div class="mb-16 lg:mb-0">
+          <h2 class="text-2xl uppercase font-bold pb-6">HÅRKUR</h2>
+          <Pris service="Hårkur" pris="Fra 250 kr." />
+        </div>
+
+        <!-- Opsætning & føn -->
+        <div class="mb-16 lg:mb-0">
+          <h2 class="text-2xl uppercase font-bold pb-6">OPSÆTNING & FØN</h2>
+          <Pris service="Vask og føn" pris="450 kr." />
+          <Pris service="Håropsætninger" pris="Kontakt salonen" />
+        </div>
+
+        <!-- Grafik, knap og tekst -->
+        <div class="mb-16 lg:mb-6">
+          <div class="lg:flex lg:items-center lg:justify-between">
+            <div class="flex justify-center flip-vertical mb-6 lg:order-2">
+              <Image
+                class="rotation"
+                src={hairdryer}
+                alt="Animeret illustration af en føntørrer"
+                loading="lazy"
+              />
+            </div>
+            <div class="flex justify-center mb-6 lg:order-1 lg:h-fit">
+              <Link2 variant="lb" href="https://salonbook.one/?casa17#/">
+                Book tid
+              </Link2>
+            </div>
+          </div>
+          <p class="break-words text-sm lg:text-base max-w-prose">
+            <span
+              class="font-bold uppercase text-brun-900 leading-relaxed text-sm lg:text-base"
+            >
+              Obs
+            </span>
+            Vores farvebehandlinger er fra priser, da der kan komme tillæg på ved
+            ekstra langt/tykt hår. Derudover tages der forbehold for prisstigninger
+            og tastefejl.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-10 lg:mx-20">
+    <div class="flex items-center mt-10 lg:mt-20 mb-6 lg:mb-24">
+      <div class="flex-grow border-t border-brun-900 min-w-6"></div>
+      <h3
+        class="text-4xl lg:text-6xl uppercase font-bold px-[8px] lg:px-[30px]"
+      >
+        Brands
+      </h3>
+      <div class="flex-grow border-t border-brun-900 min-w-6"></div>
+    </div>
+
+    <div>
+      <div class="mb-10 lg:mb-20">
+        <div class="flex items-center flex-col lg:flex-row gap-6 lg:gap-14">
+          <HoverPic
+            image="../img/brand_evo1.webp"
+            imagealt="Billede der viser tre forskellige produkter fra EVO. "
+            titel="EVO"
+            navn="Fugtgivende serie"
+            beskrivelse="Produkter der giver fugt og reparerer"
+          />
+          <HoverPic
+            image="../img/brand_icon.webp"
+            imagealt="Billedet viser fem forskellige produkter fra serien ICON. "
+            titel="I.C.O.N"
+            navn="Hårpleje"
+            beskrivelse="Et udvalg af produkter der plejer håret"
+          />
+          <HoverPic
+            image="../img/brand_evo2.webp"
+            imagealt="Billedet viser tre forskellige produkter fra EVO."
+            titel="EVO"
+            navn="Styling af hår"
+            beskrivelse="Style dit hår med disse produkter"
+          />
+        </div>
+        <div class="mt-4 lg:mt-7">
+          <p>
+            <span
+              class="font-bold uppercase text-brun-900 leading-relaxed text-sm lg:text-base"
+            >
+              Obs
+            </span>
+            Viste produkter kan kun købes i salonen, og ikke online.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  h1,
+  h2,
+  h3 {
+    font-family: outfit;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: agrandir;
+  }
+  .rotation {
+    animation-name: rotation_kf;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes rotation_kf {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-15deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .flip-vertical {
+    transform: scaleX(-1);
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/tailwind.css";
+import "animate.css";
+const { title } = Astro.props;
+---
+
+<html lang="da" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Book tid hos Casa No 17 - frisørsalonen hvor dit hår er i fokus, og du får en skræddersyet oplevelse hver gang."
+    />
+    <title>{Astro.props.title}</title>
+  </head>
+
+  <body>
+    <header class="top-0 z-[100] sticky">
+      <Header />
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <Footer />
+    </footer>
+
+    <script src="/login.js" defer></script>
+  </body>
+</html>
+
+<style>
+  a,
+  h1,
+  h2,
+  h3 {
+    font-family: outfit;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: agrandir;
+  }
+</style>

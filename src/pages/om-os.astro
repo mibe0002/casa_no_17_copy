@@ -1,0 +1,298 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link2.astro";
+import { Image } from "astro:assets";
+import facade from "../assets/images/facade.webp";
+import Aabningstider from "../components/Aabningstider.astro";
+import HoverPic from "../components/HoverPic.astro";
+import hairdryer from "../assets/images/hairdryer.svg";
+import brush from "../assets/images/brush.svg";
+import scissor from "../assets/images/scissor.svg";
+import comb from "../assets/images/comb.svg";
+import sofa from "../assets/images/sofa.png";
+import camilla from "../assets/images/camilla.webp";
+---
+
+<MainLayout title="Om os">
+  <!-- Overskrift -->
+  <div class="flex items-center mb-10 mt-20 mx-10 lg:mx-20 lg:mb-24">
+    <div class="flex-grow border-t border-brun-900"></div>
+    <span
+      class="px-4 text-4xl text-brun-900 font-bold text-center uppercase lg:text-6xl"
+      ><h1>Casa no. 17</h1></span
+    >
+    <div class="flex-grow border-t border-brun-900"></div>
+  </div>
+
+  <section id="Om salonen">
+    <div class="flex flex-col lg:flex-row h-auto lg:h-screen">
+      <div class="w-full lg:w-2/5 h-[500px] lg:h-auto">
+        <Image
+          class="w-full h-full object-cover"
+          src={facade}
+          alt="Billedet viser salon Casa No 17's facade."
+          loading="eager"
+        />
+      </div>
+
+      <div
+        class="w-full lg:w-3/5 bg-brun-800 text-brun-25 flex flex-col justify-center px-6 sm:px-12 lg:px-32 py-12"
+      >
+        <div>
+          <h2
+            class="text-brun-25 text-3xl lg:text-5xl font-bold uppercase mb-6"
+          >
+            Frisør på Blågårdsgade
+          </h2>
+
+          <div
+            class="max-w-prose text-brun-25 leading-relaxed text-sm lg:text-base"
+          >
+            <p class="mb-3">
+              Frisør Casa No. 17, ejet af Camilla From Vedsted, ligger centralt
+              på Blågårdsgade i hjertet af Nørrebro, København. Vi tilbyder
+              dameklip, herreklip og hårfarvning i en hyggelig og afslappet
+              atmosfære.
+            </p>
+            <p class="mb-3">
+              Siden 2002 har vi skabt personlig service og skræddersyet
+              behandling til hver kunde. Vi tager os tid til at finde netop den
+              frisure og farve, der passer dig bedst. Vi følger med i de nyeste
+              trends og teknikker – men går aldrig på kompromis med det, der
+              klæder dig.
+            </p>
+            <p class="mb-3">
+              Vi anvender kun kvalitetsprodukter fra I.C.O.N., EVO og Wella –
+              skånsomme, effektive og fri for skadelige stoffer.
+            </p>
+            <p class="mb-3">
+              Hos os er alle velkomne, og vi sætter en ære i god stemning og høj
+              faglighed. Kig forbi Blågårdsgade 17 eller følg os på Facebook &
+              Instagram.
+            </p>
+            <p class="mb-5">Vi glæder os til at byde dig velkommen!</p>
+          </div>
+
+          <div class="flex justify-center mt-6">
+            <Link class="uppercase" variant="db" href="/priser">Se priser</Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Animeret ikoner">
+    <div class="flex flex-row justify-center mt-10 lg:my-20">
+      <div class="w-1/6 lg:w-1/12">
+        <Image
+          class="w-full h-full object-contain rotation"
+          src={hairdryer}
+          alt="Billedet er en hårtørrer ..."
+          loading="lazy"
+        />
+      </div>
+      <div class="w-1/6 lg:w-1/12">
+        <Image
+          class="w-full h-full object-contain rotation"
+          src={brush}
+          alt="Billedet viser en mørkebrun børste ..."
+          loading="lazy"
+        />
+      </div>
+      <div class="w-1/6 lg:w-1/12">
+        <Image
+          class="w-full h-full object-contain rotation"
+          src={scissor}
+          alt="Billedet viser en mørkebrun saks ..."
+          loading="lazy"
+        />
+      </div>
+      <div class="w-1/6 lg:w-1/12">
+        <Image
+          class="w-full h-full object-contain rotation"
+          src={comb}
+          alt="Billedet viser en mørkebrun kam ..."
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Overskrift 2 -->
+  <div class="flex items-center mb-10 mt-20 mx-10 lg:mx-20">
+    <div class="flex-grow border-t border-brun-900"></div>
+    <span
+      class="px-4 text-4xl text-brun-900 font-bold text-center uppercase lg:text-6xl"
+      ><h3>Frisør & ejer</h3></span
+    >
+    <div class="flex-grow border-t border-brun-900"></div>
+  </div>
+
+  <section id="Om Camilla">
+    <div class="flex flex-col lg:flex-row h-auto lg:h-screen">
+      <div
+        class="w-full lg:w-3/5 bg-brun-800 text-brun-25 flex flex-col justify-center px-6 sm:px-12 lg:px-32 py-12"
+      >
+        <div>
+          <h4 class="text-3xl lg:text-5xl font-bold uppercase mb-6">
+            CAMILLA FROM VEDSTED
+          </h4>
+
+          <div class="max-w-prose leading-relaxed text-sm lg:text-base">
+            <p class="mb-3">
+              Camilla er indehaver af Frisør Casa No. 17. Hun har arbejdet i
+              Blågårdsgade nr. 17, siden hun blev udlært i 2003.
+            </p>
+            <p class="mb-3">
+              Camilla overtog forretningen i år 2006 og omdøbte salonen til
+              Frisør Casa No. 17, som den stadig hedder. Camilla har siden da
+              drevet den stabile salon med kompetente hænder. Hun er glad for at
+              lære nye metoder og få ny viden indenfor trends og tendenser i
+              frisørfaget, og derfor har hun ofte taget på kurser og messer i
+              både ind- og udland, specielt London.
+            </p>
+            <p class="mb-5">
+              Camilla kigger altid først og fremmest på kunden og dernæst på
+              hvad, der danner mode for tiden, når hun skal råde om klip og
+              farve. Det er vigtigt for hende, at kunden får en frisure, der
+              klæder lige præcis ham eller hende.
+            </p>
+          </div>
+
+          <div class="flex justify-center mt-6">
+            <Link
+              class="uppercase"
+              variant="db"
+              href="https://salonbook.one/?casa17#/">BOOK TID</Link
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Billedsektion -->
+      <div class="w-full lg:w-2/5 h-[500px] lg:h-auto order-[-1] lg:order-1">
+        <Image
+          class="w-full h-full object-cover"
+          src={camilla}
+          alt="Billedet viser ejeren og frisør Camilla, som er i gang med at klippe hår på en kunde."
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="åbningstider" class="flex justify-center">
+    <Aabningstider class="flex items-center" />
+  </section>
+
+  <section id="Kontakt" class="w-full max-w-none">
+    <div class="flex flex-col lg:flex-row w-full">
+      <!-- Billede -->
+      <div class="w-full lg:w-1/2 h-[300px] lg:h-auto">
+        <Image
+          class="w-full h-full object-cover"
+          src={sofa}
+          alt="Billedet viser venteområdet i salonen med en sort sofa og brunt træbord."
+          loading="lazy"
+        />
+      </div>
+      <!-- Tekst -->
+      <div
+        class="w-full lg:w-1/2 bg-brun-800 text-brun-25 flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-12"
+      >
+        <div>
+          <h4 class="text-3xl lg:text-5xl font-bold uppercase mb-6">Kontakt</h4>
+          <p class="leading-relaxed mb-3 text-sm lg:text-base">
+            Blågårdsgade 17<br />
+            2200 København N
+          </p>
+          <p class="leading-relaxed mb-3 text-sm lg:text-base">
+            Tlf. 3535 0080
+          </p>
+          <p class="leading-relaxed mb-3 text-sm lg:text-base">
+            Vedstedcamilla@gmail.com
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overskrift 3 -->
+  <div class="flex items-center mb-10 mt-20 mx-10 lg:mx-20">
+    <div class="flex-grow border-t border-brun-900"></div>
+    <span
+      class="px-4 text-4xl text-brun-900 font-bold text-center uppercase lg:text-6xl"
+      ><h5>Brands</h5></span
+    >
+    <div class="flex-grow border-t border-brun-900"></div>
+  </div>
+
+  <section id="Brands">
+    <div class="mx-10 lg:mx-20 mb-20">
+      <div class="flex items-center flex-col lg:flex-row gap-6 lg:gap-14">
+        <HoverPic
+          image="../img/brand_evo1.webp"
+          imagealt="Billede der viser tre forskellige produkter fra EVO."
+          titel="EVO"
+          navn="Fugtgivende serie"
+          beskrivelse="Produkter der giver fugt og reparerer"
+        />
+        <HoverPic
+          image="../img/brand_icon.webp"
+          imagealt="Billedet viser fem forskellige produkter fra serien ICON."
+          titel="I.C.O.N"
+          navn="Hårpleje"
+          beskrivelse="Et udvalg af produkter der plejer håret"
+        />
+        <HoverPic
+          image="../img/brand_evo2.webp"
+          imagealt="Billedet viser tre forskellige produkter fra EVO. "
+          titel="EVO"
+          navn="Styling af hår"
+          beskrivelse="Style dit hår med disse produkter"
+        />
+      </div>
+      <div class="mt-4">
+        <p>
+          <span
+            class="font-bold uppercase text-brun-900 leading-relaxed text-sm lg:text-base"
+          >
+            Obs
+          </span>
+          Viste produkter kan kun købes i salonen, og ikke online
+        </p>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: outfit;
+    font-weight: 700;
+  }
+  p {
+    font-family: agrandir;
+  }
+  .rotation {
+    animation-name: rotation_kf;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes rotation_kf {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-15deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+</style>

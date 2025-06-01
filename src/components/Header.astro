@@ -1,0 +1,153 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/images/logo.svg';
+import Link from './Link.astro';
+import Link2 from './Link2.astro';
+---
+<div class="w-full h-auto">
+    <div class="flex justify-between items-center px-10 lg:px-20 py-6 lg:py-4 border-b border-brun-800 bg-brun-25">
+        <!-- Nav links desktop -->
+        <div class="hidden lg:flex items-center justify-between w-screen">
+            <nav>
+                <ul class="flex gap-12">
+                    <li><Link href="/priser" variant="large" size="header" class="section-link">Priser</Link></li>
+                    <li><Link href="/#åbningstider" variant="large" size="header" class="section-link">Åbningstider</Link></li>
+                    <li><Link href="/galleri" variant="large" size="header" class="section-link">Galleri</Link></li>
+                </ul>
+            </nav>
+
+            <!-- Desktop logo -->
+            <Link href="/" class="transition-transform duration-200 active:scale-105 hover:scale-105">
+                <Image src={logo} alt="Casa No 17's Logo" loading="eager"></Image>
+                <span class="sr-only hidden">Gå til Casa No 17s forside</span>
+            </Link>
+
+            <!-- Button CTA & åbningstider -->
+            <div class="flex gap-12 items-baseline">
+                <Link href="/om-os" variant="large" size="header" class="section-link">Om os</Link>
+                <Link href="/kontakt" variant="large" size="header" class="section-link">Kontakt</Link>
+                <Link2 variant="lb" href="https://salonbook.one/?casa17#/" target="_blank">
+                    Book tid
+                </Link2>
+            </div>
+        </div>
+        
+        <!-- Mobile logo -->
+        <Link href="/" class="block lg:hidden transition-transform duration-200 active:scale-105 hover:scale-105">
+            <Image src={logo} alt="Casa No 17s logo" loading="eager"></Image>
+        </Link>
+
+        <!-- Mobil menu -->
+        <button id="burgerButton" aria-label="Åbn menu" class="lg:hidden transition-transform duration-150 active:scale-105 hover:scale-105">
+            <svg id="burgerIcon" xmlns="http://www.w3.org/2000/svg" width="48" height="48"  fill="none" viewBox="0 0 24 24" stroke="rgba(68, 48, 40, 1)">
+                <path id="burgerLines" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/>
+  
+                <!-- Kryds ikonet -->
+                <path id="closeLines" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobil menu list version -->
+    <nav id="mobileMenu" class="lg:hidden hidden transition-all duration-300 pt-8 pb-10 bg-brun-800 px-10 py-6">
+        <div class="flex flex-col gap-10">
+            <ul class="uppercase font-outfit flex flex-col gap-8">
+                <li><Link href="/priser">Priser</Link></li>
+                <li><Link href="/#åbningstider">Åbningstider</Link></li>
+                <li><Link href="/galleri">Galleri</Link></li>
+                <li><Link href="/om-os">Om os</Link></li>
+                <li><Link href="/kontakt">Kontakt</Link></li>
+            </ul>
+            <Link2 variant="db" href="https://salonbook.one/?casa17#/" class="text-center" target="_blank">
+                Book tid
+            </Link2>
+         </div>
+    </nav>
+</div>
+
+<!-- Hashtag sektion (alle) underlines -->
+<style>
+.section-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.section-link::after {
+    content: '';
+  position: absolute;
+  bottom: 0;             
+  left: 50%;
+  height: 2px;
+  width: 0;
+  background-color: var(--link-underline-color, currentColor);
+  transition-property: width, left;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+
+.section-link.active::after {
+    left: 0;
+    width: 100%;
+}
+
+.section-link:hover::after {
+  left: 0;
+  width: 100%;
+}
+</style>
+
+<script>
+const burgerButton = document.getElementById('burgerButton');
+const mobileMenu = document.getElementById('mobileMenu');
+const burgerLines = document.getElementById('burgerLines');
+const closeLines = document.getElementById('closeLines');
+
+burgerButton.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+
+  // Skift ikon
+  burgerLines.classList.toggle('hidden');
+  closeLines.classList.toggle('hidden');
+});
+
+// Underline feedback generelt
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll<HTMLAnchorElement>('.section-link');
+
+  function activateLink() {
+    const hash = window.location.hash;
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+
+    links.forEach(link => {
+      const url = new URL(link.href);
+      const linkHash = url.hash;
+      const linkPath = url.pathname.replace(/\/$/, '');
+
+      // Prioritér hash-match, hvis der er et hash i URL
+      if (hash && linkHash === hash) {
+        link.classList.add('active');
+      } else if (!hash && linkPath === currentPath && currentPath !== '') {
+        // Hvis ingen hash, så match på path
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  activateLink();
+
+  window.addEventListener('hashchange', activateLink);
+  window.addEventListener('popstate', activateLink); // håndter browser back/forward navigation
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      // Opdater aktivt link ved klik
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+});
+</script>
