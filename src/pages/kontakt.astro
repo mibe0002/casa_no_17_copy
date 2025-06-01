@@ -75,7 +75,7 @@ import billede from "../assets/images/stemingsbillede.webp";
 
             <section id="email_form" class="mt-6 lg:mt-0">
                 <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot_field">
-                    <input type="hidden" name="form_name" value="kontakt" />
+                    <input type="hidden" name="form-name" value="kontakt" />
                     <input type="hidden" name="bot_field" />
 
                     <div class="mb-9">
@@ -90,7 +90,7 @@ import billede from "../assets/images/stemingsbillede.webp";
 
                     <div class="mb-9">
                         <label for="phone" class="text-brun-900 text-base lg:text-2xl uppercase">Telefonummer <span class="text-red-700">*</span></label>
-                        <input type="tel" id="phone" name="phone" required class="mt-5 h-14 rounded-[5px] shadow-md shadow-brun-900/50 border-none text-brun-900 text-sm lg:text-base focus:ring-brun-500 focus:border-brun-500 w-full p-2.5 placeholder:text-brun-900/30" placeholder="Skriv dit telefon nummer"/>
+                        <input type="tel" id="phone" name="phone" pattern="^(\+45\s?)?\d{8}$" required class="mt-5 h-14 rounded-[5px] shadow-md shadow-brun-900/50 border-none text-brun-900 text-sm lg:text-base focus:ring-brun-500 focus:border-brun-500 w-full p-2.5 placeholder:text-brun-900/30" placeholder="Skriv dit telefon nummer"/>
                     </div>
 
                     <div>
