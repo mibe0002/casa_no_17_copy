@@ -3,7 +3,7 @@ import "../styles/tailwind.css";
 
 // ...rest Tillader at komponent kan have props såsom id, class, onclick osv. på sig. 
 // Henter parametrene fra Astro.props
-const { variant = "lb", size = "size", ...rest} = Astro.props;
+const { variant = "lb", size = "size", type = "button", ...rest} = Astro.props;
 
 //Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
 const buttonStyling =
@@ -22,6 +22,6 @@ const sizeClasses = {
 ---
 
 <!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
-<button type="button" class:list={[buttonStyling, variantClasses[variant], sizeClasses[size], rest.class]} {...rest}>
+<button type={type} class:list={[buttonStyling, variantClasses[variant], sizeClasses[size], rest.class]} {...rest}>
   <slot />
 </button>
