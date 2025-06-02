@@ -28,7 +28,7 @@ import Evo from "../assets/images/evo.svg";
       <source src="/video/hero_video.webm" type="video/webm" />
     </video>
     <!-- Overlay for contrast -->
-    <div class="absolute inset-0 bg-brun-800/40 z-10"></div>
+    <div class="absolute inset-0 bg-brun-800/40 z-10 hero_gradient"></div>
     <!-- Content -->
     <div
       class="relative z-20 flex items-center justify-center h-full text-center px-4 md:pt-24"
@@ -288,6 +288,10 @@ import Evo from "../assets/images/evo.svg";
   }
   .background {
     background: linear-gradient(0deg, #443028 80%, #faf9f8 20%);
+  }
+
+  .hero_gradient {
+background: linear-gradient(180deg, rgba(250, 249, 248, 0.0), rgba(32, 23, 19, 0.9));
   }
 
   .logo-banner {
