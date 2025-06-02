@@ -10,11 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.3",
+    "@astrojs/alpinejs": "^0.4.8",
     "@types/alpinejs": "^3.13.11",
     "alpinejs": "^3.14.8",
     "animate.css": "^4.1.1",
-    "astro": "^5.1.10",
+    "astro": "^5.8.1",
     "motion": "^12.0.6"
   },
   "devDependencies": {
