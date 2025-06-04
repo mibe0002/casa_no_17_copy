@@ -13,12 +13,12 @@ const {
   <!-- open: false betyder, at info-boksen er skjult i starten.
   @click.away="open = false" gør, at info-boksen lukker, hvis man klikker udenfor. -->
   <div x-data="{ open: false }" @click.away="open = false" class="relative">
-    <div class="relative group aspect-[3/4]">
+    <div class="relative group aspect-[3/4] hover:scale-110 duration-300">
       <!-- Her er fixet -->
       <img
         src={image}
         alt={imagealt}
-        class="w-full h-full object-cover cursor-pointer rounded-[5px]"
+        class="w-full h-full object-cover rounded-[5px]"
         loading="lazy"
         @click="window.innerWidth < 768 ? open = !open : null"
       />
