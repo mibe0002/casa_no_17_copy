@@ -20,6 +20,7 @@ import Link2 from './Link2.astro';
             <Link href="/" class="transition-transform duration-200 active:scale-105 hover:scale-105">
                 <Image src={logo} alt="Casa No 17's Logo" loading="eager"></Image>
                 <span class="sr-only hidden">Gå til Casa No 17s forside</span>
+                <!-- class="sr-only" bruges til at skjule indhold visuelt, men stadig gøre det tilgængeligt for skærmlæsere. Dsv. reelt burde hidden være unødvendigt her. -->
             </Link>
 
             <!-- Button CTA & åbningstider -->
@@ -39,6 +40,7 @@ import Link2 from './Link2.astro';
 
         <!-- Mobil menu -->
         <button id="burgerButton" aria-label="Åbn menu" class="lg:hidden transition-transform duration-150 active:scale-105 hover:scale-105">
+          <!-- aria-label gør knappen mere tilgængelig ved at give skærmlæsere en tekstbeskrivelse. Her fortæller det brugeren, at knappen åbner menuen -->
             <svg id="burgerIcon" xmlns="http://www.w3.org/2000/svg" width="48" height="48"  fill="none" viewBox="0 0 24 24" stroke="rgba(68, 48, 40, 1)">
                 <path id="burgerLines" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/>
   
@@ -69,13 +71,13 @@ import Link2 from './Link2.astro';
 <!-- Hashtag sektion (alle) underlines -->
 <style>
 .section-link {
-    position: relative;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .section-link::after {
-    content: '';
+  content: '';
   position: absolute;
   bottom: 0;             
   left: 50%;
@@ -88,8 +90,8 @@ import Link2 from './Link2.astro';
 }
 
 .section-link.active::after {
-    left: 0;
-    width: 100%;
+  left: 0;
+  width: 100%;
 }
 
 .section-link:hover::after {
@@ -112,7 +114,7 @@ burgerButton.addEventListener('click', () => {
   closeLines.classList.toggle('hidden');
 });
 
-// Underline feedback generelt
+// Underline feedback generelt | section-link
 document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll<HTMLAnchorElement>('.section-link');
 

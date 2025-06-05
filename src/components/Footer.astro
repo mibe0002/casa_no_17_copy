@@ -13,8 +13,9 @@ import facebook from '../assets/images/facebook.svg';
         class="w-full h-[224px] lg:h-[250px] border-0"
         allowfullscreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
+        referrerpolicy="no-referrer-when-downgrade"> 
     </iframe>
+    <!-- referrer: beskytte brugerdata | Hvis man går fra en sikker side (HTTPS) til en usikker side (HTTP), så sendes ingen referrer. -->
 </div>
 
 <!-- resten af footeren -->
@@ -37,6 +38,7 @@ import facebook from '../assets/images/facebook.svg';
             <Link href="https://maps.app.goo.gl/ycvebqFF2aEwhLdu6" size="footer" variant="footer"
             target="_blank"
             rel="noopener noreferrer">
+            <!-- sikkerhed igen, bruges sammen med target="_blank" -->
                 <span id="agrandir">Blågårdsgade 17</span><br>
                 <span id="agrandir">2200 København N</span>
             </Link>

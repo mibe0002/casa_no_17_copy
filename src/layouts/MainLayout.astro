@@ -15,7 +15,7 @@ const { title } = Astro.props;
     <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
-      content="Book tid hos Casa No 17 - frisørsalonen hvor dit hår er i fokus, og du får en skræddersyet oplevelse hver gang."
+      content="Book tid hos Casa No 17 - frisørsalonen hvor dit hår er i fokus, og hvor du får en skræddersyet oplevelse hver gang."
     />
     <title>{Astro.props.title}</title>
   </head>
@@ -34,14 +34,12 @@ const { title } = Astro.props;
     </footer>
 
     <script src="/login.js" defer></script>
+    <!-- script bliver indlæst med defer, så det først kører, når HTML’en er færdig. -->
   </body>
 </html>
 
 <style>
-  a,
-  h1,
-  h2,
-  h3 {
+  a, h1, h2, h3 {
     font-family: outfit;
     font-weight: 700;
   }

@@ -1,6 +1,7 @@
 @font-face {
   font-family: "agrandir";
   src: url("/font/agrandir.woff2") format("woff2");
+  /* woff2 er et weboptimeret fontformat, som sikrer god ydeevne. */
   font-weight: 400;
   font-style: normal;
 }
@@ -92,4 +93,4 @@
   }
 }
 /* Animation fra: https://codepen.io/jstn/pen/mdoOZJ af Justin @jstn */
-/*css use in html = link-underline-hover link-underline-800/25 link-underline-bottom-0/2 */
+/*css use in html = link-underline-hover link-underline-800,25 link-underline-bottom-0,2 */

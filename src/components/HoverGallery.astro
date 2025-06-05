@@ -14,6 +14,7 @@ const {
   @click.away="open = false" gør, at info-boksen lukker, hvis man klikker udenfor. -->
   <div x-data="{ open: false }" @click.away="open = false" class="relative">
     <div class="relative group aspect-[3/4] hover:scale-110 duration-300">
+      <!-- group bruges til at lave hover-effekt på nested elementer. -->
       <!-- Her er fixet -->
       <img
         src={image}
@@ -47,5 +48,6 @@ const {
   }
 </style>
 
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<!-- defer betyder scriptet kører først, når HTML er færdig indlæst. -->
+<!-- Import af Alpine.js bibliotek, som gør de små interaktive features (x-data, x-show, @click, mv) muligt. -->

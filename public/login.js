@@ -1,9 +1,11 @@
+// Udleveret kode af undervise fra 3. semester: Stefan Grage, brugt til loginbeskyttelse af skoleprojekt.
 class Login extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({
       mode: "open",
-    }); //apparently slots only work with the shadow dom?
+    });
+    // Her bruges Shadow DOM, som isolerer styles og markup fra resten af siden. Det sikrer f.eks., at CSS her ikke konflikter med andet indhold.
   }
   connectedCallback() {
     this.html = `<style>
@@ -87,20 +89,29 @@ class Login extends HTMLElement {
       </div>
     </div>`;
     this.render();
+    // Hele HTML og styling til loginboksen i en string form.
 
     this.shadowRoot.querySelector("form").addEventListener("submit", (e) => {
       e.preventDefault();
       if (this.shadowRoot.querySelector("input[name=pass]").value === "CasaNo17") {
+        // Koden
         document.querySelector("#totally-delete-me").remove();
+        // Hvis koden matcher fjernes overlay, som er "#totally-delete-me".
         localStorage.setItem("iform-totally-logged-in", true);
+        // Samt gemmes en nøgle i "localStorage", som husker, at brugeren er logget ind.
+        // Så det ikke vises igen ved refresh.
       }
     });
+    // Her tjekkes om brugeren skriver det rigtige password.
   }
   render() {
     this.shadowRoot.innerHTML = this.html;
   }
 }
+// Hele "class Login extends HTMLElement {}" er en custom HTML-komponent, en <iform-login>
+
 customElements.define("iform-login", Login);
+
 window.addEventListener("load", () => {
   if (!localStorage.getItem("iform-totally-logged-in")) {
     const div = document.createElement("div");
@@ -114,3 +125,5 @@ window.addEventListener("load", () => {
     document.body.prepend(div);
   }
 });
+// Når siden indlæses, tjekker koden om, brugeren er logget ind?
+// | Hvis nej, så vises loginboksen ved at placere <iform-login> som et overlay.

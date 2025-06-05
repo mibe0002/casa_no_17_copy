@@ -9,12 +9,12 @@ import HoverGallery from "../components/HoverGallery.astro";
 <MainLayout title="Galleri">
   <div class="flex items-center mb-10 mt-10 lg:mt-20 mx-10 lg:mx-20 lg:mb-24">
     <div class="flex-grow border-t border-brun-900"></div>
-    <span
-      class="px-4 text-4xl text-brun-900 font-bold text-center uppercase lg:text-6xl"
-      ><h1>Galleri</h1></span
-    >
+      <span class="px-4 text-4xl text-brun-900 font-bold text-center uppercase lg:text-6xl">
+        <h1>Galleri</h1>
+      </span>
     <div class="flex-grow border-t border-brun-900"></div>
   </div>
+
   <section class="flex items-start gap-6 flex-wrap mx-10 mb-10 lg:mx-20">
     <div class="flex items-center gap-4 min-w-[3rem]">
       <a
@@ -46,6 +46,8 @@ import HoverGallery from "../components/HoverGallery.astro";
 
     <div>
       <p class="max-w-prose leading-relaxed">
+        <!-- max-w-prose: fylder maksimalt (65ch/linje) en behagelig bredde for læsning. -->
+         <!-- leading-relaxed: mere linjeafstand for en bedre læsbarhed -->
         Få et glimt af hverdagen i salonen, bliv inspireret af smukke hårstile
         og vær den første til at få nyheder, tips og eksklusive tilbud.
       </p>

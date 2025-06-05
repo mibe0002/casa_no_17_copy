@@ -1,17 +1,17 @@
 ---
-import Link from "../components/Link.astro";
+// import Link from "../components/Link.astro"; | Den bruges ikke
 const { url="#", cardimage="", cardimagealt="", titel="", target="" } = Astro.props;
 ---
 
 <a href={url} target={target}>
 <div class="bg-brun-25 text-brun-25 rounded-[5px] overflow-hidden relative group lg:hover:scale-110 duration-300">
-    <div class="w-full h-full object-cover">
-             <img src={cardimage} alt={cardimagealt} loading="lazy">
+    <div class="w-full h-full">
+             <img src={cardimage} alt={cardimagealt} class="object-cover" loading="lazy">
         </div>
         <div class="absolute bottom-0 w-full bg-gradient-to-t from-brun-900 to-transparent p-6">
             <h4 class="text-2xl uppercase font-outfit font-bold">{titel}</h4>
           <hr class="border-brun-25 my-2" />
-          <p class="text-base hover:opacity-80 hover:underline font-agrandir">Læs mere</a>
+          <p class="text-base hover:opacity-80 hover:underline font-agrandir">Læs mere</p>
     </div>
 </div>
 </a>

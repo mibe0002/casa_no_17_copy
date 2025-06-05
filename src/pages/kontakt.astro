@@ -10,6 +10,7 @@ import billede from "../assets/images/stemingsbillede.webp";
 ---
 <MainLayout title="Kontakt">
     <div class="mx-10 lg:mx-20 text-brun-900">
+        <!-- Titel -->
         <div class="flex items-center mt-10 lg:mt-20 mb-6 lg:mb-24">
             <!-- Border Grafik -->
             <div class="flex-grow border-t border-brun-900 min-w-6"></div>
@@ -41,7 +42,7 @@ import billede from "../assets/images/stemingsbillede.webp";
                         <div class="flex flex-col gap-5 lg:flex-row lg:gap-16">
                             <Link href="tel:+4535350080" class="transition-transform duration-200 active:scale-105 hover:scale-105 text-brun-900 text-sm lg:text-base font-normal normal-case flex items-center gap-4">
                                 <Image src={phone} alt="Ikon af telefon der linker til opkald" loading="lazy"></Image>
-                                <p class="capitalize">Tlf. 3535 0080</p>
+                                <p class="normal-case">Tlf. 3535 0080</p>
                             </Link>
                             <Link href="mailto:Vedstedcamilla@gmail.com" class="transition-transform duration-200 active:scale-105 hover:scale-105 text-brun-900 text-sm lg:text-base font-normal normal-case flex items-center gap-4">
                                 <Image src={mail} alt="Ikon af mail der linker til email" loading="lazy"></Image>
@@ -75,8 +76,12 @@ import billede from "../assets/images/stemingsbillede.webp";
 
             <section id="email_form" class="mt-6 lg:mt-0">
                 <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot_field">
+                    <!-- method="POST": data, der bliver indtastet i formularen, bliver sendt til serveren uden at blive synligt i URL’en. -->
+                    <!-- data-netlify="true": aktiverer Netlify Forms, så Netlify kan fange og gemme formularindsendelser uden en backend. -->
+                    <!-- netlify-honeypot="bot_field": Beskytter imod spam. Netlify tilføjer et usynligt felt til form, som kun bots udfylder. Hvis det bliver udfyldt, ignoreres indsendelsen. -->
                     <input type="hidden" name="form-name" value="kontakt" />
                     <input type="hidden" name="bot_field" />
+                     <!-- Sender forms navn eller bot-field i baggrunden uden at vise det i UI. -->
 
                     <div class="mb-9">
                         <label for="name" class="text-brun-900 text-base lg:text-2xl uppercase">Navn <span class="text-red-700">*</span></label>
@@ -96,6 +101,7 @@ import billede from "../assets/images/stemingsbillede.webp";
                     <div>
                         <label for="message" class="text-brun-900 text-base lg:text-2xl uppercase">Besked <span class="text-red-700">*</span></label>
                         <textarea id="message" name="message" required class="field-sizing-content mt-5 min-h-[200px] rounded-[5px] shadow-md shadow-brun-900/50 border-none text-brun-900 text-sm lg:text-base focus:ring-brun-500 focus:border-brun-500 w-full p-2.5 placeholder:text-brun-900/30" placeholder="Skriv din besked her"></textarea>
+                        <!-- textarea: længere besked -->
                     </div>
                 
                     <div class="mt-8 mb-14">

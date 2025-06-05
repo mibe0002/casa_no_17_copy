@@ -54,6 +54,7 @@ import Link2 from "../components/Link2.astro";
           <Pris service="Helfarve ud i længder" pris="Fra 900 kr" />
         </div>
 
+         <!-- mobil rækkefølge -->
         <!-- Helfarve med klip mobil -->
         <div class="mb-16 lg:mb-0 lg:hidden">
           <h2 class="text-2xl uppercase font-bold pb-6">HELFARVE MED KLIP</h2>
@@ -122,6 +123,7 @@ import Link2 from "../components/Link2.astro";
             </div>
           </div>
           <p class="break-words text-sm lg:text-base max-w-prose">
+            <!-- break-words: add line breaks mid-word if needed. -->
             <span
               class="font-bold uppercase text-brun-900 leading-relaxed text-sm lg:text-base"
             >
@@ -188,9 +190,7 @@ import Link2 from "../components/Link2.astro";
 </MainLayout>
 
 <style>
-  h1,
-  h2,
-  h3 {
+  h1, h2, h3 {
     font-family: outfit;
     font-weight: 700;
   }
