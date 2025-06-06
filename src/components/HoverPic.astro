@@ -18,7 +18,7 @@ const {
         <img
           src={image}
           alt={imagealt}
-          class="w-full h-full object-cover rounded-[5px]"
+          class="sm:max-w-screen-sm lg:w-full h-full object-cover rounded-[5px]"
           loading="lazy"
           @click="window.innerWidth < 768 ? open = !open : null"
         />
@@ -45,8 +45,8 @@ const {
     font-family: outfit;
     font-weight: 700;
   }
-  
-/* @keyframes float {
+
+  /* @keyframes float {
   0%, 100% {
     transform: translateY(0);
   }
@@ -58,14 +58,15 @@ const {
   animation: float 4s ease-in-out infinite;
 } */
 
-/* @media (min-width: 1024px) {
+  /* @media (min-width: 1024px) {
   .desktop-no-float {
     animation: none !important;
   }
 } */
- /* @keyframes float bruger den ikke */
+  /* @keyframes float bruger den ikke */
 </style>
 
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>
 <!-- defer betyder scriptet kører først, når HTML er færdig indlæst. -->
 <!-- Import af Alpine.js bibliotek, som gør de små interaktive features (x-data, x-show, @click, mv) muligt. -->
