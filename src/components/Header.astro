@@ -5,11 +5,11 @@ import Link from './Link.astro';
 import Link2 from './Link2.astro';
 ---
 <div class="w-full h-auto">
-    <div class="flex justify-between items-center px-10 lg:px-20 py-6 lg:py-4 border-b border-brun-800 bg-brun-25">
+    <div class="flex justify-between items-center px-8 lg:px-20 py-6 lg:py-4 border-b border-brun-800 bg-brun-25">
         <!-- Nav links desktop -->
         <div class="hidden lg:flex items-center justify-between w-screen">
             <nav>
-                <ul class="flex gap-12">
+                <ul class="flex gap-11 xl:gap-12">
                     <li><Link href="/priser" variant="large" size="header" class="section-link">Priser</Link></li>
                     <li><Link href="/#åbningstider" variant="large" size="header" class="section-link">Åbningstider</Link></li>
                     <li><Link href="/galleri" variant="large" size="header" class="section-link">Galleri</Link></li>
@@ -17,17 +17,17 @@ import Link2 from './Link2.astro';
             </nav>
 
             <!-- Desktop logo -->
-            <Link href="/" class="transition-transform duration-200 active:scale-105 hover:scale-105">
+            <Link href="/" class="transition-transform duration-200 active:scale-105 hover:scale-105 shrink-0">
                 <Image src={logo} alt="Casa No 17's Logo" loading="eager"></Image>
                 <span class="sr-only hidden">Gå til Casa No 17s forside</span>
                 <!-- class="sr-only" bruges til at skjule indhold visuelt, men stadig gøre det tilgængeligt for skærmlæsere. Dsv. reelt burde hidden være unødvendigt her. -->
             </Link>
 
             <!-- Button CTA & åbningstider -->
-            <div class="flex gap-12 items-baseline">
-                <Link href="/om-os" variant="large" size="header" class="section-link">Om os</Link>
+            <div class="flex gap-11 xl:gap-12 items-baseline">
+                <Link href="/om-os" variant="large" size="header" class="section-link text-nowrap">Om os</Link>
                 <Link href="/kontakt" variant="large" size="header" class="section-link">Kontakt</Link>
-                <Link2 variant="lb" href="https://salonbook.one/?casa17#/" target="_blank">
+                <Link2 variant="lb" href="https://salonbook.one/?casa17#/" target="_blank" class="text-nowrap">
                     Book tid
                 </Link2>
             </div>
